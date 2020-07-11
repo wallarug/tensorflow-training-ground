@@ -4,6 +4,10 @@
 # Tutorial: https://www.tensorflow.org/tutorials/keras/classification
 #
 
+
+from os import listdir
+from os.path import isfile, join
+
 # TensorFlow and tf.keras
 import tensorflow as tf
 from tensorflow import keras
@@ -13,6 +17,32 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 print(tf.__version__)
+
+# variables
+epochs = 20
+learning_rate = 0.001
+batch_size = 64
+
+def load_data(dataset):
+    ''' Loads images with tags on filenames '''
+    images = []
+    classes = []
+
+    # get a list of files from the dataset path
+
+    onlyfiles = [f for f in listdir(dataset) if isfile(join(dataset, f))]
+
+    for f in onlyfiles:
+        # open file
+        image = open(f, 'r')
+
+        # get class from filename
+        if f in classes:
+            pass #TODO
+
+        # add image to list
+        images.add(image)
+    
 
 # set up class names
 class_names = ['bad_detection', 'stop', 'turn_left', 'turn_right', 'park']
