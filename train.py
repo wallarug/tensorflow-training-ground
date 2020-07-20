@@ -2,6 +2,7 @@
 # Tensorflow 1.15.2
 #
 # Tutorial: https://www.tensorflow.org/tutorials/keras/classification
+# Tutorial: https://www.tensorflow.org/tutorials/images/classification
 #
 
 
