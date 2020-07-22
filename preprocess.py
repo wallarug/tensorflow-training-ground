@@ -6,7 +6,8 @@ from os import listdir, rename, listdir
 from os.path import isfile, join
 from pathlib import Path
 
-#PATH = ''
+PATH = "/Users/cianb/Documents/repos/wallarug/tensorflow-training-ground/turn_signs_color_filtered/train/left"
+FILE_NAME = "left"
 #train_dir = os.path.join(PATH, 'train')
 #validation_dir = os.path.join(PATH, 'validation')
 
@@ -34,8 +35,8 @@ def folder_rename(path, name):
 
         # rename files
         rename(src, dst)
-        print(src, dst)
+        #print(src, dst)
         
         
-folder_rename(Path("/Users/cianb/Documents/repos/wallarug/tensorflow-training-ground/turn_signs_bw_filtered/train/left"),"left")
+folder_rename(Path(PATH),FILE_NAME)
 
