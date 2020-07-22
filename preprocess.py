@@ -12,7 +12,10 @@ FILE_NAME = "left"
 """
     Pre-Process Proceedure
     1.  Rename files to correct format
-    2.  Flip Horizontal and put into correct directory
+    2.  Generate Extra Data:
+        i.   Flip Horizontal  (remember, left is right, right is left ;) )
+        ii.  Shift up/down/left/right 10%-15% (random)
+        iii. 
     3.  Split into train and validation (75/25)
 
 """
@@ -41,6 +44,7 @@ def folder_rename(path, name):
         # rename files
         rename(src, dst)
         #print(src, dst)
+
         
         
 folder_rename(Path(PATH),FILE_NAME)
