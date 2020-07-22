@@ -8,13 +8,18 @@ from pathlib import Path
 
 PATH = "/Users/cianb/Documents/repos/wallarug/tensorflow-training-ground/turn_signs_color_filtered/train/left"
 FILE_NAME = "left"
+
+"""
+    Pre-Process Proceedure
+    1.  Rename files to correct format
+    2.  Flip Horizontal and put into correct directory
+    3.  Split into train and validation (75/25)
+
+"""
+
+
 #train_dir = os.path.join(PATH, 'train')
 #validation_dir = os.path.join(PATH, 'validation')
-
-#train_right_dir = os.path.join(train_dir, 'right')  # directory with our training cat pictures
-#train_left_dir = os.path.join(train_dir, 'left')  # directory with our training dog pictures
-#validation_right_dir = os.path.join(validation_dir, 'right')  # directory with our validation cat pictures
-#validation_left_dir = os.path.join(validation_dir, 'left')  # directory with our validation dog pictures
 
 
 def folder_rename(path, name):
