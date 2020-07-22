@@ -2,8 +2,9 @@
 # Script to rename and create data for TensorFlow
 #
 
-from os import listdir, rename
+from os import listdir, rename, listdir
 from os.path import isfile, join
+from pathlib import Path
 
 #PATH = ''
 #train_dir = os.path.join(PATH, 'train')
@@ -17,19 +18,24 @@ from os.path import isfile, join
 
 def folder_rename(path, name):
     # renames all files from 0 to x with format 'name{0}.jpg'
-    for count, filename in enumerate(os.listdir(path)):
+    for count, filename in enumerate(listdir(path)):
         # get extension
         ext = filename[-3:]
         
         # set up new file name
-        dst = "{0}/{1}{2}.{3}".format(path, name, count-1, ext)
+        dst = "{0}/{1}{2}.{3}".format(path, name, count, ext)
 
         # set up old file name
         src = "{0}/{1}".format(path, filename)
 
+        if src == dst:
+            print("file already exists")
+            continue
+
         # rename files
         rename(src, dst)
+        print(src, dst)
         
         
-folder_rename("C:\Users\cianb\Documents\repos\wallarug\tensorflow-training-ground\turn_signs_bw_filtered\train\left","left")
+folder_rename(Path("/Users/cianb/Documents/repos/wallarug/tensorflow-training-ground/turn_signs_bw_filtered/train/left"),"left")
 
