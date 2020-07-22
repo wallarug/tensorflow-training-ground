@@ -6,6 +6,8 @@ from os import listdir, rename, listdir
 from os.path import isfile, join
 from pathlib import Path
 
+import cv2
+
 PATH = "/Users/cianb/Documents/repos/wallarug/tensorflow-training-ground/turn_signs_color_filtered/train/left"
 FILE_NAME = "left"
 
@@ -45,7 +47,17 @@ def folder_rename(path, name):
         rename(src, dst)
         #print(src, dst)
 
-        
+
+def flip_hori(file_path, file_name, new_file_name):
+    name = file_path + "/" + file_name
+    dst = file_path + "/" + new_file_name
+    
+    img = cv2.imread(file_path)
+
+    flipped = cv2.flip(img, 1)
+
+    cv2.imwrite(flipped, dst)
+    
         
 folder_rename(Path(PATH),FILE_NAME)
 
